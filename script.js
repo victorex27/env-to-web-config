@@ -10,9 +10,9 @@ const copyFilesToWebconfig = () => {
     const lines = data.split("\n");
     let output = "";
     for (line of lines) {
-      if (line.charAt(0) === "#") continue;
+      if (line.charAt(0) === "#") continue; // skip comments
 
-      if (!line.includes("=")) continue;
+      if (!line.includes("=")) continue; // skip lines without =
 
       const entry = line.split("=");
       const key = entry[0];
